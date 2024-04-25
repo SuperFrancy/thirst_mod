@@ -1,0 +1,44 @@
+{
+  "mod_elements": [
+    {
+      "name": "ThirstBar",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thirst_bar",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/client/screens/ThirstBarOverlay.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "language_map": {
+    "en_us": {
+      "gui.thirst_mod.thirst_bar.label_empty": ""
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "thirst_mod",
+    "modName": "Thirst Mod",
+    "version": "1.0.0",
+    "author": "Francesco, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.20.4",
+    "modElementsPackage": "net.mcreator.thirstmod"
+  },
+  "mcreatorVersion": 202400117319
+}
