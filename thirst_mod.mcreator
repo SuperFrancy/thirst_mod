@@ -133,8 +133,8 @@
             "type": "entity"
           },
           {
-            "name": "world",
-            "type": "world"
+            "name": "sourceentity",
+            "type": "entity"
           }
         ]
       },
@@ -637,6 +637,39 @@
         ]
       },
       "path": "~/Procedure"
+    },
+    {
+      "name": "Run",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "run",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/RunProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedure"
+    },
+    {
+      "name": "Diff",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "diff",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/DiffProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedure"
     }
   ],
   "variable_elements": [
@@ -645,6 +678,18 @@
       "type": "number",
       "scope": "player_lifetime",
       "value": "20.0"
+    },
+    {
+      "name": "tick",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "diff",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
     }
   ],
   "sound_elements": [],

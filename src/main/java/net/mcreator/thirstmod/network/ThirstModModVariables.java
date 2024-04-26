@@ -11,8 +11,13 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.bus.api.SubscribeEvent;
 
+import net.minecraft.world.level.saveddata.SavedData;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.protocol.PacketFlow;
@@ -32,6 +37,7 @@ public class ThirstModModVariables {
 
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
+		ThirstModMod.addNetworkMessage(SavedDataSyncMessage.ID, SavedDataSyncMessage::new, SavedDataSyncMessage::handleData);
 		ThirstModMod.addNetworkMessage(PlayerVariablesSyncMessage.ID, PlayerVariablesSyncMessage::new, PlayerVariablesSyncMessage::handleData);
 	}
 
@@ -61,24 +67,169 @@ public class ThirstModModVariables {
 			PlayerVariables clone = new PlayerVariables();
 			if (!event.isWasDeath()) {
 				clone.Thirst = original.Thirst;
+				clone.tick = original.tick;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
+		}
+
+		@SubscribeEvent
+		public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
+			if (event.getEntity() instanceof ServerPlayer player) {
+				SavedData mapdata = MapVariables.get(event.getEntity().level());
+				SavedData worlddata = WorldVariables.get(event.getEntity().level());
+				if (mapdata != null)
+					PacketDistributor.PLAYER.with(player).send(new SavedDataSyncMessage(0, mapdata));
+				if (worlddata != null)
+					PacketDistributor.PLAYER.with(player).send(new SavedDataSyncMessage(1, worlddata));
+			}
+		}
+
+		@SubscribeEvent
+		public static void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
+			if (event.getEntity() instanceof ServerPlayer player) {
+				SavedData worlddata = WorldVariables.get(event.getEntity().level());
+				if (worlddata != null)
+					PacketDistributor.PLAYER.with(player).send(new SavedDataSyncMessage(1, worlddata));
+			}
+		}
+	}
+
+	public static class WorldVariables extends SavedData {
+		public static final String DATA_NAME = "thirst_mod_worldvars";
+
+		public static WorldVariables load(CompoundTag tag) {
+			WorldVariables data = new WorldVariables();
+			data.read(tag);
+			return data;
+		}
+
+		public void read(CompoundTag nbt) {
+		}
+
+		@Override
+		public CompoundTag save(CompoundTag nbt) {
+			return nbt;
+		}
+
+		public void syncData(LevelAccessor world) {
+			this.setDirty();
+			if (world instanceof Level level && !level.isClientSide())
+				PacketDistributor.DIMENSION.with(level.dimension()).send(new SavedDataSyncMessage(1, this));
+		}
+
+		static WorldVariables clientSide = new WorldVariables();
+
+		public static WorldVariables get(LevelAccessor world) {
+			if (world instanceof ServerLevel level) {
+				return level.getDataStorage().computeIfAbsent(new SavedData.Factory<>(WorldVariables::new, WorldVariables::load), DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class MapVariables extends SavedData {
+		public static final String DATA_NAME = "thirst_mod_mapvars";
+		public double diff = 0;
+
+		public static MapVariables load(CompoundTag tag) {
+			MapVariables data = new MapVariables();
+			data.read(tag);
+			return data;
+		}
+
+		public void read(CompoundTag nbt) {
+			diff = nbt.getDouble("diff");
+		}
+
+		@Override
+		public CompoundTag save(CompoundTag nbt) {
+			nbt.putDouble("diff", diff);
+			return nbt;
+		}
+
+		public void syncData(LevelAccessor world) {
+			this.setDirty();
+			if (world instanceof Level && !world.isClientSide())
+				PacketDistributor.ALL.noArg().send(new SavedDataSyncMessage(0, this));
+		}
+
+		static MapVariables clientSide = new MapVariables();
+
+		public static MapVariables get(LevelAccessor world) {
+			if (world instanceof ServerLevelAccessor serverLevelAcc) {
+				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(new SavedData.Factory<>(MapVariables::new, MapVariables::load), DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class SavedDataSyncMessage implements CustomPacketPayload {
+		public static final ResourceLocation ID = new ResourceLocation(ThirstModMod.MODID, "saved_data_sync");
+		private final int type;
+		private SavedData data;
+
+		public SavedDataSyncMessage(FriendlyByteBuf buffer) {
+			this.type = buffer.readInt();
+			CompoundTag nbt = buffer.readNbt();
+			if (nbt != null) {
+				this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
+				if (this.data instanceof MapVariables mapVariables)
+					mapVariables.read(nbt);
+				else if (this.data instanceof WorldVariables worldVariables)
+					worldVariables.read(nbt);
+			}
+		}
+
+		public SavedDataSyncMessage(int type, SavedData data) {
+			this.type = type;
+			this.data = data;
+		}
+
+		@Override
+		public void write(final FriendlyByteBuf buffer) {
+			buffer.writeInt(type);
+			if (data != null)
+				buffer.writeNbt(data.save(new CompoundTag()));
+		}
+
+		@Override
+		public ResourceLocation id() {
+			return ID;
+		}
+
+		public static void handleData(final SavedDataSyncMessage message, final PlayPayloadContext context) {
+			if (context.flow() == PacketFlow.CLIENTBOUND && message.data != null) {
+				context.workHandler().submitAsync(() -> {
+					if (message.type == 0)
+						MapVariables.clientSide.read(message.data.save(new CompoundTag()));
+					else
+						WorldVariables.clientSide.read(message.data.save(new CompoundTag()));
+				}).exceptionally(e -> {
+					context.packetHandler().disconnect(Component.literal(e.getMessage()));
+					return null;
+				});
+			}
 		}
 	}
 
 	public static class PlayerVariables implements INBTSerializable<CompoundTag> {
 		public double Thirst = 20.0;
+		public double tick = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
 			CompoundTag nbt = new CompoundTag();
 			nbt.putDouble("Thirst", Thirst);
+			nbt.putDouble("tick", tick);
 			return nbt;
 		}
 
 		@Override
 		public void deserializeNBT(CompoundTag nbt) {
 			Thirst = nbt.getDouble("Thirst");
+			tick = nbt.getDouble("tick");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

@@ -66,83 +66,83 @@ public class ThirstBarTOverlay {
 		if (ShowTProcedure.execute(entity)) {
 			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 82, h - 49, 0, 0, 9, 9, 9, 9);
 
-			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 73, h - 49, 0, 0, 9, 9, 9, 9);
+			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 74, h - 49, 0, 0, 9, 9, 9, 9);
 
-			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 64, h - 49, 0, 0, 9, 9, 9, 9);
+			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 66, h - 49, 0, 0, 9, 9, 9, 9);
 
-			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 55, h - 49, 0, 0, 9, 9, 9, 9);
+			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 58, h - 49, 0, 0, 9, 9, 9, 9);
 
-			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 46, h - 49, 0, 0, 9, 9, 9, 9);
+			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 50, h - 49, 0, 0, 9, 9, 9, 9);
 
-			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 37, h - 49, 0, 0, 9, 9, 9, 9);
+			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 42, h - 49, 0, 0, 9, 9, 9, 9);
 
-			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 28, h - 49, 0, 0, 9, 9, 9, 9);
+			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 34, h - 49, 0, 0, 9, 9, 9, 9);
 
-			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 19, h - 49, 0, 0, 9, 9, 9, 9);
+			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 26, h - 49, 0, 0, 9, 9, 9, 9);
+
+			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 18, h - 49, 0, 0, 9, 9, 9, 9);
 
 			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 10, h - 49, 0, 0, 9, 9, 9, 9);
-
-			event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_empty_thirst.png"), w / 2 + 1, h - 49, 0, 0, 9, 9, 9, 9);
 
 			if (T02Procedure.execute(entity)) {
 				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 82, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T04Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 73, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 74, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T06Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 64, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 66, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T08Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 55, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 58, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T10Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 46, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 50, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T12Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 37, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 42, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T14Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 28, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 34, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T16Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 19, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 26, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T18Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 10, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 18, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T20Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 1, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_full_thirst.png"), w / 2 + 10, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T01Procedure.execute(entity)) {
 				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 82, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T03Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 73, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 74, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T05Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 64, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 66, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T07Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 55, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 58, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T09Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 46, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 50, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T11Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 37, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 42, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T13Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 28, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 34, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T15Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 19, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 26, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T17Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 10, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 18, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 			if (T19Procedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 1, h - 49, 0, 0, 9, 9, 9, 9);
+				event.getGuiGraphics().blit(new ResourceLocation("thirst_mod:textures/screens/drink_half_thirst.png"), w / 2 + 10, h - 49, 0, 0, 9, 9, 9, 9);
 			}
 		}
 		RenderSystem.depthMask(true);

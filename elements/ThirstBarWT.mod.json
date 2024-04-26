@@ -20,7 +20,7 @@
           "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 286,
+          "x": 287,
           "y": 181
         }
       },
@@ -30,7 +30,7 @@
           "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 277,
+          "x": 279,
           "y": 181
         }
       },
@@ -40,7 +40,7 @@
           "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 268,
+          "x": 271,
           "y": 181
         }
       },
@@ -50,7 +50,7 @@
           "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 259,
+          "x": 263,
           "y": 181
         }
       },
@@ -60,7 +60,7 @@
           "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 250,
+          "x": 255,
           "y": 181
         }
       },
@@ -70,7 +70,7 @@
           "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 241,
+          "x": 247,
           "y": 181
         }
       },
@@ -80,7 +80,17 @@
           "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 232,
+          "x": 239,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "drink_empty_thirst.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 231,
           "y": 181
         }
       },
@@ -91,16 +101,6 @@
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
           "x": 223,
-          "y": 181
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "drink_empty_thirst.png",
-          "use1Xscale": false,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 214,
           "y": 181
         }
       },
@@ -126,7 +126,7 @@
             "name": "T04"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 286,
+          "x": 287,
           "y": 181
         }
       },
@@ -139,7 +139,7 @@
             "name": "T06"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 277,
+          "x": 279,
           "y": 181
         }
       },
@@ -152,7 +152,7 @@
             "name": "T08"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 268,
+          "x": 271,
           "y": 181
         }
       },
@@ -165,7 +165,7 @@
             "name": "T10"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 259,
+          "x": 263,
           "y": 181
         }
       },
@@ -178,7 +178,7 @@
             "name": "T12"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 250,
+          "x": 255,
           "y": 181
         }
       },
@@ -191,7 +191,7 @@
             "name": "T14"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 241,
+          "x": 247,
           "y": 181
         }
       },
@@ -204,7 +204,7 @@
             "name": "T16"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 232,
+          "x": 239,
           "y": 181
         }
       },
@@ -217,7 +217,7 @@
             "name": "T18"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 223,
+          "x": 231,
           "y": 181
         }
       },
@@ -230,7 +230,7 @@
             "name": "T20"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 214,
+          "x": 223,
           "y": 181
         }
       },
@@ -256,7 +256,7 @@
             "name": "T03"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 286,
+          "x": 287,
           "y": 181
         }
       },
@@ -269,7 +269,7 @@
             "name": "T05"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 277,
+          "x": 279,
           "y": 181
         }
       },
@@ -282,7 +282,7 @@
             "name": "T07"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 268,
+          "x": 271,
           "y": 181
         }
       },
@@ -295,7 +295,7 @@
             "name": "T09"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 259,
+          "x": 263,
           "y": 181
         }
       },
@@ -308,7 +308,7 @@
             "name": "T11"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 250,
+          "x": 255,
           "y": 181
         }
       },
@@ -321,7 +321,7 @@
             "name": "T13"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 241,
+          "x": 247,
           "y": 181
         }
       },
@@ -334,7 +334,7 @@
             "name": "T15"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 232,
+          "x": 239,
           "y": 181
         }
       },
@@ -347,7 +347,7 @@
             "name": "T17"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 223,
+          "x": 231,
           "y": 181
         }
       },
@@ -360,7 +360,7 @@
             "name": "T19"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 214,
+          "x": 223,
           "y": 181
         }
       }

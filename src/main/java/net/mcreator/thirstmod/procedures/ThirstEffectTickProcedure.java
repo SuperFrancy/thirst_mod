@@ -10,16 +10,23 @@ public class ThirstEffectTickProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		double tick = 0;
-		tick = 0;
-		while (tick < 40 / (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(ThirstModModMobEffects.THIRST.get()) ? _livEnt.getEffect(ThirstModModMobEffects.THIRST.get()).getAmplifier() : 0)) {
-			tick = tick + 1;
+		while (entity.getData(ThirstModModVariables.PLAYER_VARIABLES).tick < (40 * 20)
+				/ (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(ThirstModModMobEffects.THIRST.get()) ? _livEnt.getEffect(ThirstModModMobEffects.THIRST.get()).getAmplifier() : 0)) {
+			{
+				ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
+				_vars.tick = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).tick + 1;
+				_vars.syncPlayerVariables(entity);
+			}
 		}
 		{
 			ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
 			_vars.Thirst = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Thirst - 1;
 			_vars.syncPlayerVariables(entity);
 		}
-		tick = 0;
+		{
+			ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
+			_vars.tick = 0;
+			_vars.syncPlayerVariables(entity);
+		}
 	}
 }
