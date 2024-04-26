@@ -1,0 +1,231 @@
+{
+  "_fv": 60,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGH",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_20.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_19.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_18.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_17.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_16.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_15.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_14.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_13.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_12.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_11.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_10.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_09.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_08.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_07.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_06.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_05.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_04.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_03.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_02.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirst_bar_01.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 224,
+          "y": 181
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "ShowW"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

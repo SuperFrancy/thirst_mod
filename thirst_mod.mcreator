@@ -10,20 +10,117 @@
         "files": [
           "src/main/java/net/mcreator/thirstmod/client/screens/ThirstBarOverlay.java"
         ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "Show",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "show",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/ShowProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedure/Show"
+    },
+    {
+      "name": "ShowW",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "show_w",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/ShowWProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedure/Show"
+    },
+    {
+      "name": "ThirstBarW",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thirst_bar_w",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/client/screens/ThirstBarWOverlay.java"
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "ValueP",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "value_p",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/ValuePProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       }
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "Thirst",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    }
+  ],
   "sound_elements": [],
   "tag_elements": {},
   "language_map": {
-    "en_us": {
-      "gui.thirst_mod.thirst_bar.label_empty": ""
-    }
+    "it_it": {},
+    "en_us": {}
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "Overlay",
+        "children": []
+      },
+      {
+        "name": "Procedure",
+        "children": [
+          {
+            "name": "Show",
+            "children": []
+          },
+          {
+            "name": "Thirst",
+            "children": []
+          }
+        ]
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "thirst_mod",

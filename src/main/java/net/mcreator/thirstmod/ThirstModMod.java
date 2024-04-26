@@ -18,6 +18,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.thirstmod.network.ThirstModModVariables;
+
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.Map;
 import java.util.List;
@@ -35,6 +37,8 @@ public class ThirstModMod {
 		// End of user code block mod constructor
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
+
+		ThirstModModVariables.ATTACHMENT_TYPES.register(modEventBus);
 
 		// Start of user code block mod init
 		// End of user code block mod init
