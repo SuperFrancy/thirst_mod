@@ -19,6 +19,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.thirstmod.network.ThirstModModVariables;
+import net.mcreator.thirstmod.init.ThirstModModMobEffects;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.Map;
@@ -39,6 +40,8 @@ public class ThirstModMod {
 		modEventBus.addListener(this::registerNetworking);
 
 		ThirstModModVariables.ATTACHMENT_TYPES.register(modEventBus);
+
+		ThirstModModMobEffects.REGISTRY.register(modEventBus);
 
 		// Start of user code block mod init
 		// End of user code block mod init

@@ -7,368 +7,368 @@
       {
         "type": "image",
         "data": {
-          "image": "drink_empty.png",
+          "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
           "x": 295,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_empty.png",
+          "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
           "x": 286,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_empty.png",
+          "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
           "x": 277,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_empty.png",
+          "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
           "x": 268,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_empty.png",
+          "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
           "x": 259,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_empty.png",
+          "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
           "x": 250,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_empty.png",
+          "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
           "x": 241,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_empty.png",
+          "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
           "x": 232,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_empty.png",
+          "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
           "x": 223,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_empty.png",
+          "image": "drink_empty_thirst.png",
           "use1Xscale": false,
           "anchorPoint": "BOTTOM_CENTER",
           "x": 214,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_full.png",
+          "image": "drink_full_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T02"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 295,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_full.png",
+          "image": "drink_full_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T04"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 286,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_full.png",
+          "image": "drink_full_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T06"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 277,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_full.png",
+          "image": "drink_full_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T08"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 268,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_full.png",
+          "image": "drink_full_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T10"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 259,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_full.png",
+          "image": "drink_full_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T12"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 250,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_full.png",
+          "image": "drink_full_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T14"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 241,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_full.png",
+          "image": "drink_full_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T16"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 232,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_full.png",
+          "image": "drink_full_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T18"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 223,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_full.png",
+          "image": "drink_full_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T20"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 214,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_half.png",
+          "image": "drink_half_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T01"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 295,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_half.png",
+          "image": "drink_half_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T03"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 286,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_half.png",
+          "image": "drink_half_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T05"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 277,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_half.png",
+          "image": "drink_half_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T07"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 268,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_half.png",
+          "image": "drink_half_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T09"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 259,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_half.png",
+          "image": "drink_half_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T11"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 250,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_half.png",
+          "image": "drink_half_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T13"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 241,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_half.png",
+          "image": "drink_half_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T15"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 232,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_half.png",
+          "image": "drink_half_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T17"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 223,
-          "y": 181
+          "y": 191
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "drink_half.png",
+          "image": "drink_half_thirst.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "T19"
           },
           "anchorPoint": "BOTTOM_CENTER",
           "x": 214,
-          "y": 181
+          "y": 191
         }
       }
     ],
     "baseTexture": "",
     "overlayTarget": "Ingame",
     "displayCondition": {
-      "name": "ShowW"
+      "name": "ShowT"
     },
     "gridSettings": {
       "sx": 18,

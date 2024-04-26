@@ -67,7 +67,7 @@ public class ThirstModModVariables {
 	}
 
 	public static class PlayerVariables implements INBTSerializable<CompoundTag> {
-		public double Thirst = 0;
+		public double Thirst = 20.0;
 
 		@Override
 		public CompoundTag serializeNBT() {

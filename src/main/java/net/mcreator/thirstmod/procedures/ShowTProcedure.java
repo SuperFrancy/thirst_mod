@@ -9,7 +9,7 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.thirstmod.init.ThirstModModMobEffects;
 
-public class ShowWProcedure {
+public class ShowTProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
@@ -31,7 +31,7 @@ public class ShowWProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)) && entity.getAirSupply() != 300 && !(entity instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(ThirstModModMobEffects.THIRST.get()))) {
+		}.checkGamemode(entity)) && entity.getAirSupply() == 300 && entity instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(ThirstModModMobEffects.THIRST.get())) {
 			return true;
 		}
 		return false;
