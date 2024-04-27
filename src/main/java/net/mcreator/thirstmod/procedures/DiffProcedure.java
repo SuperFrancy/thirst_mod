@@ -15,9 +15,9 @@ import javax.annotation.Nullable;
 @Mod.EventBusSubscriber
 public class DiffProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+	public static void onWorldTick(TickEvent.LevelTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player.level());
+			execute(event, event.level);
 		}
 	}
 

@@ -5,6 +5,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,20 +22,20 @@ public class HuskProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity(), event.getSource().getEntity());
+			execute(event, event.getEntity().level(), event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
-	public static void execute(Entity entity, Entity sourceentity) {
-		execute(null, entity, sourceentity);
+	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity) {
+		execute(null, world, entity, sourceentity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
 		if (entity instanceof Player && sourceentity instanceof Husk) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(ThirstModModMobEffects.THIRST.get(), (int) (20 * 7 * entity.getData(ThirstModModVariables.PLAYER_VARIABLES).tick), 1));
+				_entity.addEffect(new MobEffectInstance(ThirstModModMobEffects.THIRST.get(), (int) (20 * 7 * ThirstModModVariables.MapVariables.get(world).diff), 1));
 		}
 	}
 }

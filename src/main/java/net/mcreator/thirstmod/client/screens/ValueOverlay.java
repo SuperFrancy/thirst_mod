@@ -35,7 +35,7 @@ public class ValueOverlay {
 		if (true) {
 			event.getGuiGraphics().drawString(Minecraft.getInstance().font,
 
-					ValuePProcedure.execute(entity), 9, 7, -1, false);
+					ValuePProcedure.execute(world, entity), 9, 7, -1, false);
 		}
 	}
 }

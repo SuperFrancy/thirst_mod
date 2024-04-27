@@ -81,6 +81,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -135,6 +139,10 @@
           {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -639,20 +647,6 @@
       "path": "~/Procedure"
     },
     {
-      "name": "Run",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "run",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/thirstmod/procedures/RunProcedure.java"
-        ],
-        "dependencies": []
-      },
-      "path": "~/Procedure"
-    },
-    {
       "name": "Diff",
       "type": "procedure",
       "compiles": true,
@@ -670,6 +664,67 @@
         ]
       },
       "path": "~/Procedure"
+    },
+    {
+      "name": "Tick0",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tick_0",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/Tick0Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedure"
+    },
+    {
+      "name": "Esaurimento",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "esaurimento",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/EsaurimentoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedure/Esaurimento"
+    },
+    {
+      "name": "CausaDanno",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "causa_danno",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/CausaDannoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedure/Esaurimento"
     }
   ],
   "variable_elements": [
@@ -690,13 +745,25 @@
       "type": "number",
       "scope": "map",
       "value": "0"
+    },
+    {
+      "name": "Esa",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "tickEsa",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [],
   "tag_elements": {},
   "language_map": {
     "it_it": {
-      "effect.thirst_mod.thirst": "Thirst"
+      "effect.thirst_mod.thirst": "Sete"
     },
     "en_us": {
       "effect.thirst_mod.thirst": "Thirst"
@@ -718,6 +785,10 @@
           },
           {
             "name": "Thirst",
+            "children": []
+          },
+          {
+            "name": "Esaurimento",
             "children": []
           }
         ]
