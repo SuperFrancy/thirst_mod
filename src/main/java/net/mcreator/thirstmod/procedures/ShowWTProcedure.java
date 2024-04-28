@@ -31,7 +31,7 @@ public class ShowWTProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)) && entity.getAirSupply() != 300 && entity instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(ThirstModModMobEffects.THIRST.get())) {
+		}.checkGamemode(entity)) && entity.getAirSupply() != 300 && entity.getAirSupply() > 0 && entity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(ThirstModModMobEffects.THIRST.get())) {
 			return true;
 		}
 		return false;

@@ -70,6 +70,8 @@ public class ThirstModModVariables {
 				clone.tick = original.tick;
 				clone.Esa = original.Esa;
 				clone.tickEsa = original.tickEsa;
+				clone.tickSprint = original.tickSprint;
+				clone.tickSwim = original.tickSwim;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
 		}
@@ -221,6 +223,8 @@ public class ThirstModModVariables {
 		public double tick = 0;
 		public double Esa = 0;
 		public double tickEsa = 0;
+		public double tickSprint = 0;
+		public double tickSwim = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -229,6 +233,8 @@ public class ThirstModModVariables {
 			nbt.putDouble("tick", tick);
 			nbt.putDouble("Esa", Esa);
 			nbt.putDouble("tickEsa", tickEsa);
+			nbt.putDouble("tickSprint", tickSprint);
+			nbt.putDouble("tickSwim", tickSwim);
 			return nbt;
 		}
 
@@ -238,6 +244,8 @@ public class ThirstModModVariables {
 			tick = nbt.getDouble("tick");
 			Esa = nbt.getDouble("Esa");
 			tickEsa = nbt.getDouble("tickEsa");
+			tickSprint = nbt.getDouble("tickSprint");
+			tickSwim = nbt.getDouble("tickSwim");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

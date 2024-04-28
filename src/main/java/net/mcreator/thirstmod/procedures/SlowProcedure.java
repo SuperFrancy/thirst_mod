@@ -1,18 +1,39 @@
 package net.mcreator.thirstmod.procedures;
 
+import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
+
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.thirstmod.init.ThirstModModMobEffects;
+import net.mcreator.thirstmod.network.ThirstModModVariables;
 
-public class ShowTProcedure {
-	public static boolean execute(Entity entity) {
+import javax.annotation.Nullable;
+
+@Mod.EventBusSubscriber
+public class SlowProcedure {
+	@SubscribeEvent
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player);
+		}
+	}
+
+	public static void execute(Entity entity) {
+		execute(null, entity);
+	}
+
+	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
-			return false;
+			return;
 		if ((new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayer _serverPlayer) {
@@ -31,9 +52,9 @@ public class ShowTProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)) && (entity.getAirSupply() == 300 || entity.getAirSupply() <= 0) && entity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(ThirstModModMobEffects.THIRST.get())) {
-			return true;
+		}.checkGamemode(entity)) && entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Thirst <= 6) {
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 2, false, false));
 		}
-		return false;
 	}
 }

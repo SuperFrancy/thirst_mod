@@ -49,7 +49,7 @@ public class EsaurimentoProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)) && entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Esa > 4) {
+		}.checkGamemode(entity)) && entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Esa > 2) {
 			{
 				ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
 				_vars.Thirst = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Thirst - 1;

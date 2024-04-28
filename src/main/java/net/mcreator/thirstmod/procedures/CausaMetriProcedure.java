@@ -1,6 +1,6 @@
 package net.mcreator.thirstmod.procedures;
 
-import net.neoforged.neoforge.event.entity.living.LivingAttackEvent;
+import net.neoforged.neoforge.event.TickEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
@@ -16,20 +16,20 @@ import net.mcreator.thirstmod.network.ThirstModModVariables;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class CausaDannoProcedure {
+public class CausaMetriProcedure {
 	@SubscribeEvent
-	public static void onEntityAttacked(LivingAttackEvent event) {
-		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity(), event.getSource().getEntity());
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player);
 		}
 	}
 
-	public static void execute(Entity entity, Entity sourceentity) {
-		execute(null, entity, sourceentity);
+	public static void execute(Entity entity) {
+		execute(null, entity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity) {
-		if (entity == null || sourceentity == null)
+	private static void execute(@Nullable Event event, Entity entity) {
+		if (entity == null)
 			return;
 		if ((new Object() {
 			public boolean checkGamemode(Entity _ent) {
@@ -49,11 +49,19 @@ public class CausaDannoProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)) && entity instanceof Player) {
-			{
-				ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
-				_vars.Esa = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Esa + 0.3;
-				_vars.syncPlayerVariables(entity);
+		}.checkGamemode(entity)) && entity.isSwimming()) {
+			if (entity.getData(ThirstModModVariables.PLAYER_VARIABLES).tickSwim < 20) {
+				{
+					ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
+					_vars.tickSwim = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).tickSwim + 1;
+					_vars.syncPlayerVariables(entity);
+				}
+			} else {
+				{
+					ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
+					_vars.tickSwim = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).tickSwim + 0.01;
+					_vars.syncPlayerVariables(entity);
+				}
 			}
 		} else if ((new Object() {
 			public boolean checkGamemode(Entity _ent) {
@@ -64,7 +72,7 @@ public class CausaDannoProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(sourceentity) || new Object() {
+		}.checkGamemode(entity) || new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayer _serverPlayer) {
 					return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.ADVENTURE;
@@ -73,11 +81,19 @@ public class CausaDannoProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(sourceentity)) && sourceentity instanceof Player) {
-			{
-				ThirstModModVariables.PlayerVariables _vars = sourceentity.getData(ThirstModModVariables.PLAYER_VARIABLES);
-				_vars.Esa = sourceentity.getData(ThirstModModVariables.PLAYER_VARIABLES).Esa + 0.3;
-				_vars.syncPlayerVariables(sourceentity);
+		}.checkGamemode(entity)) && entity.isSprinting()) {
+			if (entity.getData(ThirstModModVariables.PLAYER_VARIABLES).tickSprint < 20) {
+				{
+					ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
+					_vars.tickSprint = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).tickSprint + 1;
+					_vars.syncPlayerVariables(entity);
+				}
+			} else {
+				{
+					ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
+					_vars.tickSprint = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).tickSprint + 0.1;
+					_vars.syncPlayerVariables(entity);
+				}
 			}
 		}
 	}

@@ -119,7 +119,7 @@
           }
         ]
       },
-      "path": "~/Procedure"
+      "path": "~/Procedure/Effect"
     },
     {
       "name": "Husk",
@@ -146,7 +146,7 @@
           }
         ]
       },
-      "path": "~/Procedure"
+      "path": "~/Procedure/Effect/Husk"
     },
     {
       "name": "T20",
@@ -644,7 +644,7 @@
           }
         ]
       },
-      "path": "~/Procedure"
+      "path": "~/Procedure/Thirst"
     },
     {
       "name": "Diff",
@@ -663,7 +663,7 @@
           }
         ]
       },
-      "path": "~/Procedure"
+      "path": "~/Procedure/Effect/Husk"
     },
     {
       "name": "Tick0",
@@ -682,7 +682,7 @@
           }
         ]
       },
-      "path": "~/Procedure"
+      "path": "~/Procedure/Effect"
     },
     {
       "name": "Esaurimento",
@@ -725,6 +725,136 @@
         ]
       },
       "path": "~/Procedure/Esaurimento"
+    },
+    {
+      "name": "CausaMetri",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "causa_metri",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/CausaMetriProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedure/Esaurimento"
+    },
+    {
+      "name": "CausaSalto",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "causa_salto",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/CausaSaltoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedure/Esaurimento"
+    },
+    {
+      "name": "CausaBlocco",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "causa_blocco",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/CausaBloccoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedure/Esaurimento"
+    },
+    {
+      "name": "Slow",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/SlowProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedure/Effect"
+    },
+    {
+      "name": "Weak",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weak",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/WeakProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedure/Effect"
+    },
+    {
+      "name": "Sea",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sea",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/SeaProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedure"
     }
   ],
   "variable_elements": [
@@ -754,6 +884,18 @@
     },
     {
       "name": "tickEsa",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "tickSprint",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "tickSwim",
       "type": "number",
       "scope": "player_lifetime",
       "value": "0"
@@ -789,6 +931,19 @@
           },
           {
             "name": "Esaurimento",
+            "children": []
+          },
+          {
+            "name": "Effect",
+            "children": [
+              {
+                "name": "Husk",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Recipe",
             "children": []
           }
         ]

@@ -1,18 +1,34 @@
 package net.mcreator.thirstmod.procedures;
 
+import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
+
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.thirstmod.init.ThirstModModMobEffects;
+import net.mcreator.thirstmod.network.ThirstModModVariables;
 
-public class ShowTProcedure {
-	public static boolean execute(Entity entity) {
+import javax.annotation.Nullable;
+
+@Mod.EventBusSubscriber
+public class CausaBloccoProcedure {
+	@SubscribeEvent
+	public static void onBlockBreak(BlockEvent.BreakEvent event) {
+		execute(event, event.getPlayer());
+	}
+
+	public static void execute(Entity entity) {
+		execute(null, entity);
+	}
+
+	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
-			return false;
+			return;
 		if ((new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayer _serverPlayer) {
@@ -31,9 +47,12 @@ public class ShowTProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)) && (entity.getAirSupply() == 300 || entity.getAirSupply() <= 0) && entity instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(ThirstModModMobEffects.THIRST.get())) {
-			return true;
+		}.checkGamemode(entity)) && entity instanceof Player) {
+			{
+				ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
+				_vars.Esa = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Esa + 0.005;
+				_vars.syncPlayerVariables(entity);
+			}
 		}
-		return false;
 	}
 }
