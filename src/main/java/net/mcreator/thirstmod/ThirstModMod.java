@@ -19,7 +19,9 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.thirstmod.network.ThirstModModVariables;
+import net.mcreator.thirstmod.init.ThirstModModTabs;
 import net.mcreator.thirstmod.init.ThirstModModMobEffects;
+import net.mcreator.thirstmod.init.ThirstModModItems;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.Map;
@@ -39,6 +41,9 @@ public class ThirstModMod {
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
 
+		ThirstModModItems.register(modEventBus);
+
+		ThirstModModTabs.REGISTRY.register(modEventBus);
 		ThirstModModVariables.ATTACHMENT_TYPES.register(modEventBus);
 
 		ThirstModModMobEffects.REGISTRY.register(modEventBus);
