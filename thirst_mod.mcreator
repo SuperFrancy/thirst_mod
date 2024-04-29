@@ -146,7 +146,7 @@
           }
         ]
       },
-      "path": "~/Procedure/Effect/Husk"
+      "path": "~/Procedure/Effect/Way/Husk"
     },
     {
       "name": "T20",
@@ -663,7 +663,7 @@
           }
         ]
       },
-      "path": "~/Procedure/Effect/Husk"
+      "path": "~/Procedure/Effect/Way/Husk"
     },
     {
       "name": "Tick0",
@@ -855,6 +855,29 @@
         ]
       },
       "path": "~/Procedure"
+    },
+    {
+      "name": "WaterBottle",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "water_bottle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/WaterBottleProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Procedure/Effect/Way"
     }
   ],
   "variable_elements": [
@@ -937,8 +960,13 @@
             "name": "Effect",
             "children": [
               {
-                "name": "Husk",
-                "children": []
+                "name": "Way",
+                "children": [
+                  {
+                    "name": "Husk",
+                    "children": []
+                  }
+                ]
               }
             ]
           },

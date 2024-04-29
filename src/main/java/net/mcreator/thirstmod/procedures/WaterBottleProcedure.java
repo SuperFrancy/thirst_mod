@@ -1,32 +1,35 @@
 package net.mcreator.thirstmod.procedures;
 
-import net.neoforged.neoforge.event.entity.living.LivingEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerDestroyItemEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.GameType;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.thirstmod.network.ThirstModModVariables;
+import net.mcreator.thirstmod.init.ThirstModModMobEffects;
 
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class CausaSaltoProcedure {
+public class WaterBottleProcedure {
 	@SubscribeEvent
-	public static void onEntityJump(LivingEvent.LivingJumpEvent event) {
-		execute(event, event.getEntity());
+	public static void onItemDestroyed(PlayerDestroyItemEvent event) {
+		execute(event, event.getEntity(), event.getOriginal());
 	}
 
-	public static void execute(Entity entity) {
-		execute(null, entity);
+	public static void execute(Entity entity, ItemStack itemstack) {
+		execute(null, entity, itemstack);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity) {
+	private static void execute(@Nullable Event event, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
 		if ((new Object() {
@@ -47,20 +50,9 @@ public class CausaSaltoProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)) && entity instanceof Player) {
-			if (entity.isSprinting()) {
-				{
-					ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
-					_vars.Esa = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Esa + 0.2;
-					_vars.syncPlayerVariables(entity);
-				}
-			} else {
-				{
-					ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
-					_vars.Esa = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Esa + 0.05;
-					_vars.syncPlayerVariables(entity);
-				}
-			}
+		}.checkGamemode(entity)) && entity instanceof Player && (itemstack.getOrCreateTag().getString("tagName")).equals("{Potion:water}")) {
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(ThirstModModMobEffects.THIRST.get(), 60, 1, false, false));
 		}
 	}
 }
