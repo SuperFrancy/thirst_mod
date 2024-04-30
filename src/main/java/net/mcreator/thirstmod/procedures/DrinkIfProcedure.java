@@ -1,10 +1,6 @@
 package net.mcreator.thirstmod.procedures;
 
-import net.neoforged.neoforge.items.ItemHandlerHelper;
-
 import net.minecraft.world.level.GameType;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
@@ -12,11 +8,11 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.thirstmod.network.ThirstModModVariables;
 
-public class DrinkProcedure {
-	public static void execute(Entity entity) {
+public class DrinkIfProcedure {
+	public static boolean execute(Entity entity) {
 		if (entity == null)
-			return;
-		if (new Object() {
+			return false;
+		if ((new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayer _serverPlayer) {
 					return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.SURVIVAL;
@@ -34,17 +30,9 @@ public class DrinkProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)) {
-			{
-				ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
-				_vars.Thirst = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Thirst + 8;
-				_vars.syncPlayerVariables(entity);
-			}
-			if (entity instanceof Player _player) {
-				ItemStack _setstack = new ItemStack(Items.GLASS_BOTTLE).copy();
-				_setstack.setCount(1);
-				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-			}
+		}.checkGamemode(entity)) && entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Thirst <= 19) {
+			return true;
 		}
+		return false;
 	}
 }

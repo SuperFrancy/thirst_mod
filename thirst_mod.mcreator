@@ -946,7 +946,6 @@
       "locked_code": false,
       "registry_name": "drink",
       "metadata": {
-        "return_type": "logic",
         "files": [
           "src/main/java/net/mcreator/thirstmod/procedures/DrinkProcedure.java"
         ],
@@ -958,6 +957,39 @@
         ]
       },
       "path": "~/Procedure"
+    },
+    {
+      "name": "PurifiedWaterBottleR",
+      "type": "recipe",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "purified_water_bottle_r",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/thirst_mod/recipes/purified_water_bottle.json"
+        ]
+      }
+    },
+    {
+      "name": "DrinkIf",
+      "type": "procedure",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "drink_if",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/thirstmod/procedures/DrinkIfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
