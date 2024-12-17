@@ -7,7 +7,7 @@ package net.mcreator.thirstmod.init;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.entity.Entity;
@@ -19,7 +19,7 @@ import net.mcreator.thirstmod.procedures.Tick0Procedure;
 import net.mcreator.thirstmod.potion.ThirstMobEffect;
 import net.mcreator.thirstmod.ThirstModMod;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class ThirstModModMobEffects {
 	public static final DeferredRegister<MobEffect> REGISTRY = DeferredRegister.create(Registries.MOB_EFFECT, ThirstModMod.MODID);
 	public static final DeferredHolder<MobEffect, MobEffect> THIRST = REGISTRY.register("thirst", () -> new ThirstMobEffect());
@@ -41,8 +41,7 @@ public class ThirstModModMobEffects {
 	}
 
 	private static void expireEffects(Entity entity, MobEffectInstance effectInstance) {
-		MobEffect effect = effectInstance.getEffect();
-		if (effect == THIRST.get()) {
+		if (effectInstance.getEffect().is(THIRST)) {
 			Tick0Procedure.execute(entity);
 		}
 	}

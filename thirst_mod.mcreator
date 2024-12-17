@@ -3,7 +3,6 @@
     {
       "name": "ThirstBar",
       "type": "overlay",
-      "sortid": 2,
       "compiles": true,
       "locked_code": false,
       "registry_name": "thirst_bar",
@@ -17,7 +16,6 @@
     {
       "name": "Show",
       "type": "procedure",
-      "sortid": 1,
       "compiles": true,
       "locked_code": false,
       "registry_name": "show",
@@ -38,7 +36,6 @@
     {
       "name": "ShowW",
       "type": "procedure",
-      "sortid": 3,
       "compiles": true,
       "locked_code": false,
       "registry_name": "show_w",
@@ -59,7 +56,6 @@
     {
       "name": "ThirstBarW",
       "type": "overlay",
-      "sortid": 4,
       "compiles": true,
       "locked_code": false,
       "registry_name": "thirst_bar_w",
@@ -73,7 +69,6 @@
     {
       "name": "ValueP",
       "type": "procedure",
-      "sortid": 5,
       "compiles": true,
       "locked_code": false,
       "registry_name": "value_p",
@@ -98,7 +93,6 @@
     {
       "name": "Thirst",
       "type": "potioneffect",
-      "sortid": 6,
       "compiles": true,
       "locked_code": false,
       "registry_name": "thirst",
@@ -111,7 +105,6 @@
     {
       "name": "ThirstEffectTick",
       "type": "procedure",
-      "sortid": 7,
       "compiles": true,
       "locked_code": false,
       "registry_name": "thirst_effect_tick",
@@ -131,7 +124,6 @@
     {
       "name": "Husk",
       "type": "procedure",
-      "sortid": 8,
       "compiles": true,
       "locked_code": false,
       "registry_name": "husk",
@@ -159,7 +151,6 @@
     {
       "name": "T20",
       "type": "procedure",
-      "sortid": 9,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_20",
@@ -180,7 +171,6 @@
     {
       "name": "T19",
       "type": "procedure",
-      "sortid": 10,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_19",
@@ -201,7 +191,6 @@
     {
       "name": "T18",
       "type": "procedure",
-      "sortid": 11,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_18",
@@ -222,7 +211,6 @@
     {
       "name": "T17",
       "type": "procedure",
-      "sortid": 12,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_17",
@@ -243,7 +231,6 @@
     {
       "name": "T16",
       "type": "procedure",
-      "sortid": 13,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_16",
@@ -264,7 +251,6 @@
     {
       "name": "T15",
       "type": "procedure",
-      "sortid": 14,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_15",
@@ -285,7 +271,6 @@
     {
       "name": "T14",
       "type": "procedure",
-      "sortid": 15,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_14",
@@ -306,7 +291,6 @@
     {
       "name": "T13",
       "type": "procedure",
-      "sortid": 16,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_13",
@@ -327,7 +311,6 @@
     {
       "name": "T12",
       "type": "procedure",
-      "sortid": 17,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_12",
@@ -348,7 +331,6 @@
     {
       "name": "T11",
       "type": "procedure",
-      "sortid": 18,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_11",
@@ -369,7 +351,6 @@
     {
       "name": "T10",
       "type": "procedure",
-      "sortid": 19,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_10",
@@ -390,7 +371,6 @@
     {
       "name": "T09",
       "type": "procedure",
-      "sortid": 20,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_09",
@@ -411,7 +391,6 @@
     {
       "name": "T08",
       "type": "procedure",
-      "sortid": 21,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_08",
@@ -432,7 +411,6 @@
     {
       "name": "T07",
       "type": "procedure",
-      "sortid": 22,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_07",
@@ -453,7 +431,6 @@
     {
       "name": "T06",
       "type": "procedure",
-      "sortid": 23,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_06",
@@ -474,7 +451,6 @@
     {
       "name": "T05",
       "type": "procedure",
-      "sortid": 25,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_05",
@@ -495,7 +471,6 @@
     {
       "name": "T04",
       "type": "procedure",
-      "sortid": 24,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_04",
@@ -516,7 +491,6 @@
     {
       "name": "T03",
       "type": "procedure",
-      "sortid": 26,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_03",
@@ -537,7 +511,6 @@
     {
       "name": "T02",
       "type": "procedure",
-      "sortid": 27,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_02",
@@ -558,7 +531,6 @@
     {
       "name": "T01",
       "type": "procedure",
-      "sortid": 28,
       "compiles": true,
       "locked_code": false,
       "registry_name": "t_01",
@@ -579,7 +551,6 @@
     {
       "name": "ShowT",
       "type": "procedure",
-      "sortid": 29,
       "compiles": true,
       "locked_code": false,
       "registry_name": "show_t",
@@ -600,7 +571,6 @@
     {
       "name": "ShowWT",
       "type": "procedure",
-      "sortid": 30,
       "compiles": true,
       "locked_code": false,
       "registry_name": "show_wt",
@@ -621,7 +591,6 @@
     {
       "name": "ThirstBarT",
       "type": "overlay",
-      "sortid": 31,
       "compiles": true,
       "locked_code": false,
       "registry_name": "thirst_bar_t",
@@ -635,7 +604,6 @@
     {
       "name": "ThirstBarWT",
       "type": "overlay",
-      "sortid": 32,
       "compiles": true,
       "locked_code": false,
       "registry_name": "thirst_bar_wt",
@@ -649,7 +617,6 @@
     {
       "name": "Value",
       "type": "overlay",
-      "sortid": 33,
       "compiles": true,
       "locked_code": false,
       "registry_name": "value",
@@ -663,7 +630,6 @@
     {
       "name": "Cap",
       "type": "procedure",
-      "sortid": 34,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cap",
@@ -683,7 +649,6 @@
     {
       "name": "Diff",
       "type": "procedure",
-      "sortid": 35,
       "compiles": true,
       "locked_code": false,
       "registry_name": "diff",
@@ -703,7 +668,6 @@
     {
       "name": "Tick0",
       "type": "procedure",
-      "sortid": 36,
       "compiles": true,
       "locked_code": false,
       "registry_name": "tick_0",
@@ -723,7 +687,6 @@
     {
       "name": "Esaurimento",
       "type": "procedure",
-      "sortid": 37,
       "compiles": true,
       "locked_code": false,
       "registry_name": "esaurimento",
@@ -743,7 +706,6 @@
     {
       "name": "CausaDanno",
       "type": "procedure",
-      "sortid": 38,
       "compiles": true,
       "locked_code": false,
       "registry_name": "causa_danno",
@@ -767,7 +729,6 @@
     {
       "name": "CausaMetri",
       "type": "procedure",
-      "sortid": 39,
       "compiles": true,
       "locked_code": false,
       "registry_name": "causa_metri",
@@ -787,7 +748,6 @@
     {
       "name": "CausaSalto",
       "type": "procedure",
-      "sortid": 40,
       "compiles": true,
       "locked_code": false,
       "registry_name": "causa_salto",
@@ -807,7 +767,6 @@
     {
       "name": "CausaBlocco",
       "type": "procedure",
-      "sortid": 41,
       "compiles": true,
       "locked_code": false,
       "registry_name": "causa_blocco",
@@ -827,7 +786,6 @@
     {
       "name": "Slow",
       "type": "procedure",
-      "sortid": 42,
       "compiles": true,
       "locked_code": false,
       "registry_name": "slow",
@@ -847,7 +805,6 @@
     {
       "name": "Weak",
       "type": "procedure",
-      "sortid": 43,
       "compiles": true,
       "locked_code": false,
       "registry_name": "weak",
@@ -867,7 +824,6 @@
     {
       "name": "Sea",
       "type": "procedure",
-      "sortid": 44,
       "compiles": true,
       "locked_code": false,
       "registry_name": "sea",
@@ -903,7 +859,6 @@
     {
       "name": "WaterBottle",
       "type": "procedure",
-      "sortid": 45,
       "compiles": true,
       "locked_code": false,
       "registry_name": "water_bottle",
@@ -927,7 +882,6 @@
     {
       "name": "PurifiedWaterBottle",
       "type": "item",
-      "sortid": 46,
       "compiles": true,
       "locked_code": false,
       "registry_name": "purified_water_bottle",
@@ -941,7 +895,6 @@
     {
       "name": "Drink",
       "type": "procedure",
-      "sortid": 47,
       "compiles": true,
       "locked_code": false,
       "registry_name": "drink",
@@ -959,22 +912,8 @@
       "path": "~/Procedure"
     },
     {
-      "name": "PurifiedWaterBottleR",
-      "type": "recipe",
-      "sortid": 48,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "purified_water_bottle_r",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/thirst_mod/recipes/purified_water_bottle.json"
-        ]
-      }
-    },
-    {
       "name": "DrinkIf",
       "type": "procedure",
-      "sortid": 49,
       "compiles": true,
       "locked_code": false,
       "registry_name": "drink_if",
@@ -989,7 +928,8 @@
             "type": "entity"
           }
         ]
-      }
+      },
+      "path": "~/Procedure"
     }
   ],
   "variable_elements": [
@@ -1038,6 +978,7 @@
   ],
   "sound_elements": [],
   "tag_elements": {},
+  "tab_element_order": {},
   "language_map": {
     "it_it": {
       "item.thirst_mod.purified_water_bottle": "Purified Water Bottle",
@@ -1104,8 +1045,8 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "neoforge-1.20.4",
+    "currentGenerator": "neoforge-1.21.1",
     "modElementsPackage": "net.mcreator.thirstmod"
   },
-  "mcreatorVersion": 202400117319
+  "mcreatorVersion": 202400342716
 }

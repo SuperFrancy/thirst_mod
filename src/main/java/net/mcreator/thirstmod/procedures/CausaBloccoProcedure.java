@@ -1,7 +1,7 @@
 package net.mcreator.thirstmod.procedures;
 
 import net.neoforged.neoforge.event.level.BlockEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
 
@@ -15,7 +15,7 @@ import net.mcreator.thirstmod.network.ThirstModModVariables;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class CausaBloccoProcedure {
 	@SubscribeEvent
 	public static void onBlockBreak(BlockEvent.BreakEvent event) {

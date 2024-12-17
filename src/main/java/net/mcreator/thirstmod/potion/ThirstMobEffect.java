@@ -18,7 +18,8 @@ public class ThirstMobEffect extends MobEffect {
 	}
 
 	@Override
-	public void applyEffectTick(LivingEntity entity, int amplifier) {
+	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
 		ThirstEffectTickProcedure.execute(entity);
+		return super.applyEffectTick(entity, amplifier);
 	}
 }

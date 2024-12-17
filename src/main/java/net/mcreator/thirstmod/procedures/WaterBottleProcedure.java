@@ -1,24 +1,26 @@
 package net.mcreator.thirstmod.procedures;
 
 import net.neoforged.neoforge.event.entity.player.PlayerDestroyItemEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.GameType;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.thirstmod.init.ThirstModModMobEffects;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class WaterBottleProcedure {
 	@SubscribeEvent
 	public static void onItemDestroyed(PlayerDestroyItemEvent event) {
@@ -50,9 +52,9 @@ public class WaterBottleProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)) && entity instanceof Player && (itemstack.getOrCreateTag().getString("tagName")).equals("{Potion:water}")) {
+		}.checkGamemode(entity)) && entity instanceof Player && (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("tagName")).equals("{Potion:water}")) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(ThirstModModMobEffects.THIRST.get(), 60, 1, false, false));
+				_entity.addEffect(new MobEffectInstance(ThirstModModMobEffects.THIRST, 60, 1, false, false));
 		}
 	}
 }

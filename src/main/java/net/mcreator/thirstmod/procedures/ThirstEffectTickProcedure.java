@@ -43,7 +43,7 @@ public class ThirstEffectTickProcedure {
 				return false;
 			}
 		}.checkGamemode(entity)) && entity.getData(ThirstModModVariables.PLAYER_VARIABLES).tick == 800
-				/ (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(ThirstModModMobEffects.THIRST.get()) ? _livEnt.getEffect(ThirstModModMobEffects.THIRST.get()).getAmplifier() : 0)) {
+				/ (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(ThirstModModMobEffects.THIRST) ? _livEnt.getEffect(ThirstModModMobEffects.THIRST).getAmplifier() : 0)) {
 			{
 				ThirstModModVariables.PlayerVariables _vars = entity.getData(ThirstModModVariables.PLAYER_VARIABLES);
 				_vars.Thirst = entity.getData(ThirstModModVariables.PLAYER_VARIABLES).Thirst - 1;

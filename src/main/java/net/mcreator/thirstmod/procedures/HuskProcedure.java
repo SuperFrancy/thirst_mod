@@ -1,7 +1,7 @@
 package net.mcreator.thirstmod.procedures;
 
-import net.neoforged.neoforge.event.entity.living.LivingAttackEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
 
@@ -17,11 +17,11 @@ import net.mcreator.thirstmod.init.ThirstModModMobEffects;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class HuskProcedure {
 	@SubscribeEvent
-	public static void onEntityAttacked(LivingAttackEvent event) {
-		if (event != null && event.getEntity() != null) {
+	public static void onEntityAttacked(LivingIncomingDamageEvent event) {
+		if (event.getEntity() != null) {
 			execute(event, event.getEntity().level(), event.getEntity(), event.getSource().getEntity());
 		}
 	}
@@ -35,7 +35,7 @@ public class HuskProcedure {
 			return;
 		if (entity instanceof Player && sourceentity instanceof Husk) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(ThirstModModMobEffects.THIRST.get(), (int) (20 * 7 * ThirstModModVariables.MapVariables.get(world).diff), 1));
+				_entity.addEffect(new MobEffectInstance(ThirstModModMobEffects.THIRST, (int) (20 * 7 * ThirstModModVariables.MapVariables.get(world).diff), 1));
 		}
 	}
 }

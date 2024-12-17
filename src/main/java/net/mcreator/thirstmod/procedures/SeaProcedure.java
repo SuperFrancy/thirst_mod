@@ -1,7 +1,7 @@
 package net.mcreator.thirstmod.procedures;
 
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
 
@@ -29,9 +29,7 @@ import net.mcreator.thirstmod.init.ThirstModModMobEffects;
 
 import javax.annotation.Nullable;
 
-import java.util.Map;
-
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class SeaProcedure {
 	@SubscribeEvent
 	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
@@ -84,11 +82,11 @@ public class SeaProcedure {
 						BlockPos _bp = BlockPos.containing(x, y, z);
 						BlockState _bs = Blocks.CAULDRON.defaultBlockState();
 						BlockState _bso = world.getBlockState(_bp);
-						for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-							Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
-							if (_property != null && _bs.getValue(_property) != null)
+						for (Property<?> _propertyOld : _bso.getProperties()) {
+							Property _propertyNew = _bs.getBlock().getStateDefinition().getProperty(_propertyOld.getName());
+							if (_propertyNew != null && _bs.getValue(_propertyNew) != null)
 								try {
-									_bs = _bs.setValue(_property, (Comparable) entry.getValue());
+									_bs = _bs.setValue(_propertyNew, _bso.getValue(_propertyOld));
 								} catch (Exception e) {
 								}
 						}
@@ -102,13 +100,13 @@ public class SeaProcedure {
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(new ResourceLocation("entity.generic.drink")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.drink")), SoundSource.NEUTRAL, 1, 1);
 					} else {
-						_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(new ResourceLocation("entity.generic.drink")), SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.drink")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(ThirstModModMobEffects.THIRST.get(), 600, 1, false, true));
+					_entity.addEffect(new MobEffectInstance(ThirstModModMobEffects.THIRST, 600, 1, false, true));
 			} else if ((world
 					.getFluidState(
 							new BlockPos(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.ANY, entity)).getBlockPos().getX(),
@@ -122,13 +120,13 @@ public class SeaProcedure {
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(new ResourceLocation("entity.generic.drink")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.drink")), SoundSource.NEUTRAL, 1, 1);
 					} else {
-						_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(new ResourceLocation("entity.generic.drink")), SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.drink")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(ThirstModModMobEffects.THIRST.get(), 600, 1, false, true));
+					_entity.addEffect(new MobEffectInstance(ThirstModModMobEffects.THIRST, 600, 1, false, true));
 			}
 		}
 	}
